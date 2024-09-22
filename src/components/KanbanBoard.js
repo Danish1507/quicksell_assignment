@@ -110,7 +110,7 @@ const KanbanBoard = ({ tickets, users, grouping, ordering }) => {
         );
       })}
 
-      {/* Ensure same CSS applies to Canceled and Done columns */}
+      {/* Ensure same CSS applies to Cancelled and Done columns */}
       {grouping === 'status' ? (
         <>
           <div className="kanban-column">
@@ -139,8 +139,8 @@ const KanbanBoard = ({ tickets, users, grouping, ordering }) => {
             <div className="column-header">
               <div className='name'>
               <img src="/Untitled/icons_FEtask/Cancelled.svg" alt="Backlog Logo" className="header-logo" />
-                <h2>Canceled</h2>
-                <span className="task-count">{groupedTickets['Canceled'] ? groupedTickets['Canceled'].length : 0}</span>
+                <h2>Cancelled</h2>
+                <span className="task-count">{groupedTickets['Cancelled'] ? groupedTickets['Cancelled'].length : 0}</span>
               </div>
 
               <div className="header-logos">
@@ -148,8 +148,8 @@ const KanbanBoard = ({ tickets, users, grouping, ordering }) => {
                 <img src="/Untitled/icons_FEtask/3 dot menu.svg" alt="Logo 2" className="header-logo" />
               </div>
             </div>
-            {groupedTickets['Canceled'] && groupedTickets['Canceled'].length > 0 ? (
-              groupedTickets['Canceled'].map(ticket => (
+            {groupedTickets['Cancelled'] && groupedTickets['Cancelled'].length > 0 ? (
+              groupedTickets['Cancelled'].map(ticket => (
                 <TaskCard key={ticket.id} ticket={ticket} showRadio={false} />
               ))
             ) : (
